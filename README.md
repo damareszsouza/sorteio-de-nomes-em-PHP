@@ -71,3 +71,74 @@ echo $resultado; // "menor que 10"
 
 - [Operador Ternário no PHP - DevMedia](https://www.devmedia.com.br/operador-ternario-no-php/37289)
 - [PHP - Operador Ternário - W3Schools](https://www.w3schools.com/php/php_operators.asp)
+
+# 10 codigos úteis em PHP 
+
+# 01. Buscar um caracter específico em uma string e substitui-lo por outro
+   
+$texto = 'oi-eu-sou-um-texto';
+$resultado = str_replace('-', ' ', $texto);
+echo $resultado; // oi eu sou um texto
+
+# 2. Fazer uma comparação If/Else em uma linha
+
+$var1 = 5;
+$var2 = 1;
+echo $var1 > $var2 ? 'var1 é maior que var2' : 'var2 é maior que var1'; // condição ? caso true : caso false
+
+# 3. Obter a URL da página em que se está em PHP
+
+$url = $_SERVER['HTTP_HOST'];
+echo 'A URL atual é '.$url;
+
+# 4. Redirecionamento de endereço em PHP
+
+header('Location: https://www.eufacoprogramas.com'); // Redireciona o usuario para eufacoprogramas.com
+
+# 5. Como detectar o navegador do usuário em PHP
+
+$useragent = $_SERVER['HTTP_USER_AGENT'];
+echo "<strong>Seu navegador é</strong>: " . $useragent;
+
+# 06. Validação de e-mail em PHP
+
+$email = $_POST['email'];
+if(!preg_match("/^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$/",$email)) {
+echo 'Email inválido.';
+}
+
+# 07. Enviar e-mail em PHP
+
+$dest = "destinatario@gmail.com"; //Email de destino
+$assunto = "Assunto"; //Assunto
+$corpo= "Corpo da mensagem. É permitido o uso de HTML."; //Corpo do e-mail
+//Cabecalho do email
+$headers = "De: Gabriella fonseca.gabriella@gmail.comrn"; //Remetente
+$headers .= "X-Mailer: PHP5n";
+$headers .= 'MIME-Version: 1.0' . "n";
+$headers .= 'Content-type: text/html; charset=iso-8859-1' . "rn"; //
+mail($dest,$assunto,$corpo,$headers);
+
+# 8. Loop Simples
+
+for($j = 0 ;$j < 10 ;$j++){
+echo 'Essa frase vai ser escrita 10 vezes
+';
+}
+
+# 09. Obter o IP do usuário.
+
+Importante: Essa função não funciona localmente.
+
+$ip = $_SERVER['REMOTE_ADDR'];
+echo $ip;
+
+# 10. Contar quantos caracteres ou palavras há em uma string
+
+// Para contar caracteres
+$str = 'abcdef';
+echo strlen($str); // 6
+
+// Para contar palavras
+$str2 = 'aqui são quatro palavras';
+echo str_word_count($str2); // 4
